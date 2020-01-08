@@ -12,7 +12,7 @@ class App extends Component {
           <Col xs="4" className="px-0">
             <DisplaySection />
           </Col>
-          <Col xs="8" className="pl-5">
+          <Col xs="8">
             <InputSection />
           </Col>
         </Row>

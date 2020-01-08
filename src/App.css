@@ -7,6 +7,23 @@
   margin: 90px 0 0 0;
   padding: 0 250px 0 200px;
 }
+.list-items{
+  font-size: 36px;
+}
+@media(max-width: 576px){
+  .data-section {
+    height: 500px;
+    background-color: #6200ee;
+    padding-top: 30px;
+  }
+  .input-section{
+    margin: 20px 0 0 0;
+    padding: 0;
+  }
+  .list-items{
+    font-size: 16px;
+  }
+}
 
 .flip-card {
   background-color: transparent;

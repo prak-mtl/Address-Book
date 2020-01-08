@@ -3,6 +3,13 @@ import "../App.css";
 import { connect } from "react-redux";
 import { Row, Col, Button, Form, FormGroup, Label } from "reactstrap";
 import InputComponent from "../components/Input";
+import {
+  MdAdd,
+  MdQueue,
+  MdModeEdit,
+  MdClear,
+  MdDeleteForever
+} from "react-icons/md";
 
 class InputSection extends Component {
   constructor(props) {
@@ -144,22 +151,28 @@ class InputSection extends Component {
           <Col xs="4">
             {this.state.fromList ? (
               <Button onClick={this.handleSave} disabled={editable}>
-                Save
+                Save <MdQueue />
               </Button>
             ) : (
-              <Button onClick={this.handleAdd}>Add</Button>
+              <Button onClick={this.handleAdd}>
+                Add <MdAdd />
+              </Button>
             )}
           </Col>
           <Col xs="4">
             <Button onClick={this.handleEdit} disabled={!editable}>
-              Edit mode
+              Edit <MdModeEdit />
             </Button>
           </Col>
           <Col xs="4">
             {this.state.fromList ? (
-              <Button onClick={this.handleDelete}>Delete</Button>
+              <Button onClick={this.handleDelete}>
+                Delete <MdDeleteForever />
+              </Button>
             ) : (
-              <Button onClick={this.handleDelete}>Clear</Button>
+              <Button onClick={this.handleDelete}>
+                Clear <MdClear />
+              </Button>
             )}
           </Col>
         </Row>

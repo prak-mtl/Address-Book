@@ -23,7 +23,7 @@ class DisplaySection extends Component {
             <div className="flip-card" key={index}>
               <div className="flip-card-inner">
                 <div className="flip-card-front">
-                  <h2>{item.name}</h2>
+                  <p className="list-items">{item.name}</p>
                 </div>
                 <div
                   className="flip-card-back"
