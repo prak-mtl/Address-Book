@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import "../App.css";
 import { connect } from "react-redux";
-import { Row, Col, Button } from "reactstrap";
-import InputComponent from "../components/Input";
 
 class DisplaySection extends Component {
   state = {
@@ -13,6 +11,7 @@ class DisplaySection extends Component {
       this.setState({
         list: nextProps.peopleList
       });
+      localStorage.setItem("peopleList", JSON.stringify(nextProps.peopleList));
     }
   }
 
@@ -21,7 +20,7 @@ class DisplaySection extends Component {
       <section className="data-section">
         {this.state.list &&
           this.state.list.map((item, index) => (
-            <div className="flip-card">
+            <div className="flip-card" key={index}>
               <div className="flip-card-inner">
                 <div className="flip-card-front">
                   <h2>{item.name}</h2>

@@ -16,16 +16,16 @@ const reducer = (state = intialState, action) => {
             state.peopleList.push({ ...action.payload });
           }
         } else state.peopleList.push(action.payload);
+
         return {
           ...state,
           peopleList: [...state.peopleList]
         };
       }
-      
+
     case "DELETE_PERSON":
       var deletedArr = state.peopleList.filter(
-        (item, index) =>
-          item.name.toLowerCase() !== action.payload.toLowerCase()
+        item => item.name.toLowerCase() !== action.payload.toLowerCase()
       );
       return {
         ...state,
@@ -55,7 +55,13 @@ const reducer = (state = intialState, action) => {
       };
 
     default:
-      return state;
+      const storedList = JSON.parse(localStorage.getItem("peopleList"));
+      var list = [];
+      {
+        if (storedList) list = storedList;
+        else list = [];
+      }
+      return { ...state, peopleList: list };
   }
 };
 
